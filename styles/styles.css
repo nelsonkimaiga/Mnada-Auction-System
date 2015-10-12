@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 12, 2015, 4:41:43 PM
+    Author     : Kimaiga
+*/
+
+#cart-trigger{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    left: 100%;
+
+
+/*header height*/
+padding-top: 50px;
+overflow-y: auto;
+-webkit-overflow-scrolling: touch;
+transition: right 0.3s;
+
+&.speed-in{
+    right: 0;
+}
+
+}
