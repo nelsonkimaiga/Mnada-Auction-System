@@ -18,7 +18,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="products.php">Your Site</a>
+			<a class="navbar-brand" href="products.php">Shopping</a>
 		</div>
 
 		<div class="navbar-collapse collapse">

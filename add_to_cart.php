@@ -8,6 +8,10 @@
 
 session_start();
 
+//populate our cart with shopping products
+
+
+
 // get the product id
 $id = isset($_GET['id']) ? $_GET['id'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
