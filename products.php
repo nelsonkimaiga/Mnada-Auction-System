@@ -16,6 +16,7 @@ include 'layout_head.php';
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : "1";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
+//$quantity = isset();
 
 
 if($action=='added'){
