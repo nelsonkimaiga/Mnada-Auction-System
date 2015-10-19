@@ -61,7 +61,7 @@ if ($num > 0){
 					echo "<div class='product-id' style='display:none;'>{$id}</div>";
 					echo "<div class='product-name'>{$name}</div>";
 				echo "</td>";
-				echo "<td>&#36;{$price}</td>";
+				echo "<td>{$price}</td>";
 				echo "<td>";
 					echo "<a href='add_to_cart.php?id={$id}&name={$name}' class='btn btn-primary'>";
 						echo "<span class='glyphicon glyphicon-shopping-cart'></span> Add to cart";

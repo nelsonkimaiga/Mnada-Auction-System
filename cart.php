@@ -43,7 +43,7 @@ if(count($_SESSION['cart_items'])>0){
         // our table heading
         echo "<tr>";
             echo "<th class='textAlignLeft'>Product Name</th>";
-            echo "<th>Price (USD)</th>";
+            echo "<th>Price (Kshs.)</th>";
 			echo "<th>Action</th>";
         echo "</tr>";
 
@@ -58,7 +58,7 @@ if(count($_SESSION['cart_items'])>0){
 
 			echo "<tr>";
 				echo "<td>{$name}</td>";
-				echo "<td>&#36;{$price}</td>";
+				echo "<td>$price</td>";
 				echo "<td>";
 					echo "<a href='remove_from_cart.php?id={$id}&name={$name}' class='btn btn-danger'>";
 						echo "<span class='glyphicon glyphicon-remove'></span> Remove from cart";
