@@ -31,6 +31,7 @@ if($action=='exists'){
 	echo "</div>";
 }
 
+//query that checks for products in the table
 $query = "SELECT id, name, price FROM products ORDER BY name";
 
 $stmt = $con->prepare($query);
@@ -47,7 +48,7 @@ if ($num > 0){
     
     echo "<tr>";
     echo "<th class='textAlignLeft'>Product Name</th>";
-			echo "<th>Price (USD)</th>";
+			echo "<th>Price (Kshs.)</th>";
 			echo "<th>Action</th>";
         echo "</tr>";
 
