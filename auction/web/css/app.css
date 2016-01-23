@@ -11,12 +11,25 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+.section-title,
+.cover-heading {
+    text-transform: uppercase;
+    font-family: 'Raleway', serif;
+}
+
 /*header section*/
 /*cover-section*/
 .cover-container {
     background: #29293a;
     overflow: hidden;
-    height: 400px;
+    /*height: 400px;*/
 }
 
 .cover-wrapper {
@@ -45,6 +58,7 @@ body {
     font-size: 40px;
     margin: 0;
     color: #fff;
+    font-family: 'Raleway', serif;
 }
 
 .cover-designation {
@@ -53,4 +67,10 @@ body {
     text-transform: none;
     margin: 0;
     font-family: 'Raleway', serif;
+}
+
+/*about*/
+#about, #loginform{
+    min-height: 300px;
+    text-align: left;
 }
