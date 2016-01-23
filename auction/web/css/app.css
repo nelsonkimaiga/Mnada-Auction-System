@@ -15,7 +15,8 @@ body {
 /*cover-section*/
 .cover-container {
     background: #29293a;
-    overflow: hidden
+    overflow: hidden;
+    height: 250px;
 }
 
 .cover-wrapper {
