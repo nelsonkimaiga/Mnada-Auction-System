@@ -11,6 +11,19 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   </head>
   <body>
+      <!-- navbar --> <!-- smooth scroll -->
+    <div class="masthead clearfix">
+        <div class="container-fluid">
+            <h3 class="masthead-brand"><a href="#home"><img src="img/logo.jpg"></a></h3>
+            <nav>
+                <ul class="nav masthead-nav">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#description">About Us</a></li>
+                    <li><a href="#loginform">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 <!-- cover container -->
     <div class="cover-container" id="home">
         <div id="canvasAnimation"></div>
@@ -35,13 +48,13 @@
 <!-- login section -->
 <div class="row" id="login-wrapper">
 <!-- column 1 with 6-grids -->
-  <div class="medium-6 large-6 columns">
-    <!-- site description -->
+<div class="large-6 columns" id="description">
+<!--     site description -->
     <p class="desc delay-04" id="about">B&C ventures is a Kenyan based, international construction service company and is a leading builder in diverse and numerous market segments. We have earned recognition for undertaking large, complex projects, fostering innovation, embracing emerging technologies and making a difference for their clients, employees and community. We offer client the accessibility and support of a local firm with the stability and resource of a local firm with the stability and resource of a multi national organization.
 </p>
   </div>
-  <!-- login form -->
-  <div id="loginform" class="medium-6 large-6 columns">
+  <!-- login form--> 
+  <div id="loginform" class="large-6 columns">
     <form class="form" action="" method="POST" id="" onsubmit="" name="loginForm">
       <fieldset>
         <input type="text" name="username" id="user-name" placeholder="Your Username">
@@ -57,7 +70,7 @@
 </div>
 
 <!-- Footer section -->
-<footer class="footer">
+<footer class="footer medium-12 large-12 columns">
   <div class="container">
     <p>All Rights Reserved |<a href="index.html">Briclin Kenya</a></p>
   </div>
@@ -65,12 +78,193 @@
   &copy; B&C Ventures <script type="text/javascript">
   document.write(new Date().getFullYear());
 </script>
+    <a href="#home" id="toTop" style="display: block;"><span id="toTopHover"></span><span id="toTopHover"></span> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </footer>
 
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/what-input.min.js"></script>
     <script src="js/foundation.min.js"></script>
-   <script src="js/app.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/waypoint.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="js/isotope.pkgd.js"></script> 
+    <script src="js/three.js"></script>
+    <script src="js/FBOUtils.js"></script>
+    <script src="js/typed.min.js"></script>
+<!-- window scroll -->
+<script>
+    $(window).scroll(function() {
+    if ($(this).scrollTop() > 1){  
+    $('.masthead').addClass("sticky");
+    }
+    else{
+    $('.masthead').removeClass("sticky");
+    }
+    });
+    $(".masthead a, a.btn").click(function(event){
+           event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top-50}, 500);
+      
+      
+    });
+    $().ready(function(){
+        $('#home').find('.cover-hello, .cover-heading, .cover-designation, .cover-button').addClass('animated bounceInUp');
+        $('#home').find('.social a').addClass('animated zoomIn');
+        $('#home').find('.cover-wrapper-inner, .cover-button').removeClass('transparent');
+        
+        
+        $container = $('.works_list ul');
+        $container.isotope({
+          onLayout: function() {
+           $.waypoints('refresh');
+          }
+        });
+        var e = $(".isotope");
+        e.imagesLoaded( function() {
+        e.isotope({
+            itemSelector: ".element-item",
+            layoutMode: "fitRows",
+            
+        });
+      });
+        var t = {};
+        $("#filters").on("click", "button", function () {
+            var n = $(this).attr("data-filter");
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+            n = t[n] || n;
+            e.isotope({
+                filter: n
+            })
+        })
+        
+        if(isMobile){
+        $(".item").click(function(){
+        toggleDetail(this);
+        
+      });
+      }
+      else{
+      $(".item").hover(function(){
+        toggleDetail(this);
+        
+      });
+        }
+        
+        widthcalc();
+        $(window).resize(function(){
+            widthcalc();
+             $.waypoints('refresh');
+        });
+        
+        $(".cover-designation span").typed({
+            strings: ["A real Estate Developer", "a Kenyan based, international construction service company", "a leading builder in diverse and numerous market segments"],
+            typeSpeed: 30,
+            startDelay: 1000,
+          });
+    });
+    
+    $('#home, #description, #loginform').waypoint(function() {
+        activenav($(this));
+    }, { offset: function() {
+        return -$(this).height()+52;
+      }});
+    $('#home, #description, #loginform').waypoint(function() {
+        activenav($(this));
+    }, { offset: '51px' });
+    
+  $('#description').waypoint(function() {
+        $(this).find('.section-title, #filters').addClass('animated fadeInUp');
+            $(this).find('.item').addClass('animated zoomIn');
+    },{ offset: function() {
+        return $(window).height()-2;
+      }});
+   
+    $('#description').waypoint(function() {
+        $(this).find(' .section-title, .desc ').addClass('animated fadeInUp');
+        $(this).find('.btn').addClass('animated zoomIn');
+    }, { offset: function() {
+        return $(window).height()-2;
+      }});
+    $('.timeline-row').waypoint(function() {
+        if(!isMobile){
+            $(this).filter(':nth-child(even)').find('.timeline-content').addClass('animated fadeInRight').end()
+            .find('.timeline-time').addClass('animated fadeInLeft').end()
+            .find('.timeline-icon').addClass('animated zoomIn');
+            $(this).filter(':nth-child(odd)').find('.timeline-content').addClass('animated fadeInLeft').end()
+            .find('.timeline-time').addClass('animated fadeInRight').end()
+            .find('.timeline-icon').addClass('animated zoomIn');
+        } else {
+            $(this).find('.timeline-content').addClass('animated fadeInRight').end()
+            .find('.timeline-time').addClass('animated fadeInLeft').end()
+            .find('.timeline-icon').addClass('animated zoomIn');
+        }
+    }, { offset: function() {
+        return $(window).height()+100;
+      }});
+   
+    $('#contact').waypoint(function() {
+        $(this).find(' .section-title, .desc ').addClass('animated fadeInUp');
+            $(this).find('.social a').addClass('animated zoomIn');
+    }, { offset: function() {
+        return $(window).height()-2;
+      }});
+    
+  function toggleDetail(ele){
+        
+        $(ele).children(".work_details").toggleClass("auto_height");
+            $(ele).siblings('.item').children(".work_details").removeClass("auto_height");
+            $container.isotope('reLayout');  
+      };
+    function activenav(ele){
+    var eleid = ele.attr('id');
+    $('.masthead li').removeClass('active');
+    $('.masthead').find('a[href=#'+eleid+']').parent().addClass('active');
+  }
+    function widthcalc(){
+    var wrapwidth = $container.width()
+    
+    if (wrapwidth / 4 >=250){
+      worksisotope( wrapwidth / 4 );
+    }else if (wrapwidth / 3 >=250){
+      worksisotope( wrapwidth / 3 );
+    }else if (wrapwidth / 2 >=250){
+      worksisotope( wrapwidth / 2 );
+    }else {
+      worksisotope( wrapwidth );
+    }
+  }
+  function worksisotope( iwidth ){
+      //console.log(iwidth);
+      $('.item').width(Math.floor(iwidth));
+      $container.imagesLoaded(function() {
+        $container.isotope({
+          itemSelector : '.item',
+          resizable: false, 
+          masonry: { columnWidth: Math.floor(iwidth) },
+        });
+      });
+    
+  }
+    $(".fancybox").fancybox({
+      padding : 0,
+      helpers : {
+        overlay : {
+          css : {
+            'background' : 'rgba(0, 0, 0, 0.90)'
+          }
+        },
+      beforeLoad : {
+      }
+      }
+    });
+    cover-designation
+
+</script>
+
+
+   
   </body>
 </html>
 
