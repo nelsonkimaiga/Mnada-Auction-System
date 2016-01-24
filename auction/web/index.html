@@ -235,9 +235,7 @@
         controls = new THREE.OrbitControls2( camera );
         controls.radius = 400;
         controls.speed = 2;
-
-        //
-
+        
         var width = 900, height = 900;
 
         if ( ! renderer.context.getExtension( 'OES_texture_float' ) ) {
@@ -245,9 +243,6 @@
           console.log( 'OES_texture_float is not :(' );
 
         }
-
-        // Start Creation of DataTexture
-        // Could it be simplified with THREE.FBOUtils.createTextureFromData(textureWidth, textureWidth, data); ?
 
         data = new Float32Array( width * height * 3 );
 
@@ -325,14 +320,6 @@
 
         mesh = new THREE.ParticleSystem( geometry, material );
         scene.add( mesh );
-
-//        var gui = new dat.GUI();
-//        gui.add( material.uniforms.pointColor.value, 'x', 0.0, 1.0 ).name( 'red' );
-//        gui.add( material.uniforms.pointColor.value, 'y', 0.0, 1.0 ).name( 'green' );
-//        gui.add( material.uniforms.pointColor.value, 'z', 0.0, 1.0 ).name( 'blue' );
-//        gui.add( material.uniforms.pointColor.value, 'w', 0.0, 1.0 ).name( 'alpha' );
-//        gui.add( material.uniforms.pointSize, 'value', 0.0, 10.0 ).name( 'size' );
-//        gui.add( controls, 'enabled' ).name( 'auto move' );
 
         scene.add( new THREE.Mesh( new THREE.CubeGeometry( 500, 500, 500 ), new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true, opacity: 0, transparent: true } ) ) );
 
@@ -542,10 +529,6 @@
     });
     cover-designation
 
-</script>
-
-
-   
+</script>   
   </body>
 </html>
-
