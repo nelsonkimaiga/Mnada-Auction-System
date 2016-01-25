@@ -7,6 +7,8 @@
     <title>Auctioneer | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" href="css/reveal.css">
+    <script type="text/javascript" src="js/jquery.reveal.js"></script>
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   </head>
@@ -64,9 +66,15 @@
         <input type="password" name="password" id="pass-word" placeholder="Your Password">
       </fieldset>
       <button type="submit" id="login" class="button primary">Login</button>
-      <p>Don't have an account? <button type="submit" class="button successs">Sign Up</button> here.
+      <p>Don't have an account? <a href="#myModal" data-reveal-id="myModal" data-animation="fadeAndPop" data-animationspeed="300" data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal">Apply Here:</a>
     </form>
   </div>
+</div>
+<!-- sign-up modal form -->
+<div id="myModal" class="reveal-modal">
+     <h1>Modal Title</h1>
+     <p>Any content could go in here.</p>
+     <a class="close-reveal-modal">&#215;</a>
 </div>
 
 <!-- Footer section -->
