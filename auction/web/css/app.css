@@ -19,9 +19,16 @@ h5,
 h6,
 .btn,
 .section-title,
-.cover-heading {
+.cover-heading, label {
     text-transform: uppercase;
     font-family: 'Raleway', serif;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /*navbar*/
@@ -212,3 +219,19 @@ h6,
     background: url("../img/arrow.png") no-repeat 0px 0px;
 }
 
+/*responsive media queries*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
