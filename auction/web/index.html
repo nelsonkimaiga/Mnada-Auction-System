@@ -10,6 +10,49 @@
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   </head>
+  <script type="text/javascript">
+function showEmp(name){ 
+    if(document.getElementById("").value!="-1"){ 
+        xmlHttp=GetXmlHttpObject() 
+        if (xmlHttp==null){ 
+            alert ("Browser does not support HTTP Request") 
+            return 
+        } 
+        var url="getvalue.jsp" 
+        url=url+"?name="+name 
+        xmlHttp.onreadystatechange=stateChanged 
+        xmlHttp.open("GET",url,true) 
+        xmlHttp.send(null) 
+    } 
+    else{ 
+        alert(""); 
+    } 
+} 
+function stateChanged(){ 
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") { 
+        var showdata = xmlHttp.responseText; 
+        var strar = showdata.split(":"); 
+        document.getElementById("no").value= strar[1]; 
+        document.getElementById("manager").value= strar[2]; 
+    } 
+} 
+
+function GetXmlHttpObject(){ 
+    var xmlHttp=null; 
+    try{ 
+        xmlHttp=new XMLHttpRequest(); 
+    } 
+    catch (e) { 
+        try { 
+            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); 
+        } 
+        catch (e) { 
+            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+        } 
+    } 
+    return xmlHttp; 
+} 
+</script>
   <body>
       <!-- navbar --> <!-- smooth scroll -->
     <div class="masthead clearfix">
