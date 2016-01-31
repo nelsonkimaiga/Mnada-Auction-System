@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auctioneer | Welcome</title>
+    <title>Bryclin Kenya | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
     <!-- fonts -->
@@ -83,6 +83,8 @@ function MM_validateForm() {
   <!-- login form--> 
   <div id="loginform" class="large-6 columns">
     <form class="form" action="login.jsp" method="POST" id="" onsubmit="" name="loginForm">
+        <p id="login-success" class="text-success lead"></p>
+        <p id="login-error" class="text-danger lead"></p>
       <fieldset>
         <input type="text" name="username" id="user_name" placeholder="Your Username">
       </fieldset>
@@ -92,9 +94,23 @@ function MM_validateForm() {
       </fieldset>
       <button type="submit" id="login" class="button primary" onclick="MM_validateForm('user_name','','R','pass_word','','R');return document.MM_returnValue">Login</button>
       <p>Don't have an account? <a title="login" href="register.html" >Apply Here</a></p>
-
     </form>
   </div>
+  <script>
+    var loginSuccess = document.getElementById('login-success');
+    var loginError = document.getElementById('login-error');
+    var loginButton = document.getElementById('login'); 
+    var loginButton = function(error) {
+      login.disabled = false;
+      if (error) {
+        loginError.innerHTML = 'Sorry. Could not login.';
+      } else {
+        loginSuccess.innerHTML = "You havebeen loged in.";
+        // hide the form
+        loginForm.style.display = 'none';
+      }
+    };
+  </script>
 </div>
 <!-- Footer section -->
 <footer class="footer medium-12 large-12 columns">

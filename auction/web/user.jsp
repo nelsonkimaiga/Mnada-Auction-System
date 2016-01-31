@@ -36,6 +36,5 @@ conn.createStatement();
 System.out.println(sql);
        response.setContentType("text/html;charset=UTF-8");
         PrintWriter x = response.getWriter();
-        x.println("saved!");
-
+        out.print("<script type=\"text/javascript\">document.alert(\"YOU ARE VERIFIED!\");</script>");
 %>

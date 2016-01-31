@@ -27,5 +27,11 @@ String uname = request.getParameter("username");
 String pass = request.getParameter("password");
 //sql check
 String sql = "SELECT * FROM user WHERE username = '"+uname+"' AND password = '"+pass+"'";
+st.execute(sql);
+
+if (uname =="" || pass ==""){
+    out.println("Empty Fields");
+}
+
   
 %>    
