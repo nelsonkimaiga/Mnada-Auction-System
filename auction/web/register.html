@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/app.css" />
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <!--Firebase API-->
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
   </head>
   <!-- Form validation -->
 <script type="text/javascript">
@@ -39,7 +41,9 @@ function MM_validateForm() {
   </script>
   <body>
       <div class="container">
-          <form action="user.jsp" method="POST" name="registrationForm">
+          <form id="registration-form" name="userForm" onsubmit="return registerUser(this)">
+              <p id="register-success" class="text-success lead"></p>
+              <p id="register-error" class="text-success lead"></p>
             <div class="row">
                 <div class="large-6 columns">
                     <label>First Name
@@ -62,9 +66,39 @@ function MM_validateForm() {
                     <input type="password" name="password" id="pass" placeholder="Password">
                 </label>
             </div>
-            <button type="submit" class="button secondary round" onclick="MM_validateForm('first-name','','R','second-name','','R', 'email','','R','pass','','R');return document.MM_returnValue">Create Account</button>
+            <button type="submit" id="register" class="button secondary round" onclick="MM_validateForm('first-name','','R','second-name','','R', 'email','','R','pass','','R');return document.MM_returnValue">Create Account</button>
             <p>Already have an account? <a title="login" href="index.html#loginform" >Login Here</a></p>
         </form>
       </div>
+      <!-- processing user data to firebase-->
+  <script>
+    // Send message
+    var userForm = document.getElementById('registration-form');
+    var registerSuccess = document.getElementById('register-success');
+    var registerError = document.getElementById('register-error');
+    var sendBtn = document.getElementById('register');
+    var onMessageComplete = function(error) {
+      sendBtn.disabled = false;
+      if (error) {
+        registerError.innerHTML = 'Sorry. Could not register.';
+      } else {
+        registerSuccess.innerHTML = "You have been registered";
+        // hide the form
+        userForm.style.display = 'none';
+      }
+    };
+    function registerUser(formObj) {
+        // Store registered users to firebase
+        var myFirebaseRef = new Firebase("https://houseauction.firebaseio.com/users");
+        myFirebaseRef.push({
+          firstname: formObj.firstname.value,
+          secondname: formObj.secondname.value,
+          email: formObj.email.value,
+          password: formObj.password.value
+        }, onMessageComplete);
+        sendBtn.disabled = true;
+        return false;
+    }
+</script>
   </body>
 </html>
