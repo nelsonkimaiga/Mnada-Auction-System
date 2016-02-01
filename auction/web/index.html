@@ -4,11 +4,14 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="227906646111-gnf35pbf07pmgdgaeapblqg27jt9dnc1.apps.googleusercontent.com">
     <title>Bryclin Kenya | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <!--Google oAuth API-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
 <!-- Form validation -->
 <script type="text/javascript">
@@ -92,8 +95,8 @@ function MM_validateForm() {
       <fieldset>
         <input type="password" name="password" id="pass_word" placeholder="Your Password">
       </fieldset>
-      <button type="submit" id="login" class="button primary" onclick="MM_validateForm('user_name','','R','pass_word','','R');return document.MM_returnValue">Login</button>
-      <p>Don't have an account? <a title="login" href="register.html" >Apply Here</a></p>
+      <!--<button type="submit" id="login" class="button primary" onclick="MM_validateForm('user_name','','R','pass_word','','R');return document.MM_returnValue">Login</button>-->
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </form>
   </div>
   <script>
