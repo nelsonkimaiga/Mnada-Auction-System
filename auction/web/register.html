@@ -82,9 +82,10 @@ function MM_validateForm() {
       if (error) {
         registerError.innerHTML = 'Sorry. Could not register.';
       } else {
-        registerSuccess.innerHTML = "You have been registered";
-        // hide the form
-    //    userForm.style.display = 'none';
+        document.alert("You have been registered");
+        sendBtn.disabled = false;
+        // clear the form
+         document.getElementById("registration-form").reset();
       }
     };
     function registerUser(formObj) {
