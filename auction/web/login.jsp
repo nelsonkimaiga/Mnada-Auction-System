@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*,java.sql.ResultSet, java.sql.Statement;"%>
-<%
+<%   
 //java Code
 Connection conn= null;
     String url = "jdbc:mysql://localhost/";
@@ -29,18 +29,12 @@ String pass = request.getParameter("password");
 //sql check
 String sql = "SELECT * FROM user WHERE email = '"+uname+"' AND password = '"+pass+"'";
 st.execute(sql);
-//
-////some form validation using java
-//
-//		if(uname.equals("") && pass.equals(""))
-//		{
-//			response.sendRedirect("success.html");
-//			return;
-//		}
-//		else
-//		{
-//			response.sendRedirect("error.html");
-//			return;
-//		}
+
+if(uname.equals("")||pass.equals("") ){
+    response.sendRedirect("error.html");
+//	session.setAttribute("cust_name",uname);
+}else {
+	response.sendRedirect("success.html");
+}
 %>
 
