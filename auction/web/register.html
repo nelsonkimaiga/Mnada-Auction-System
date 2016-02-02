@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="css/app.css" />
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <!--Firebase API-->
-    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
   </head>
   <!-- Form validation -->
 <script type="text/javascript">
@@ -70,36 +68,5 @@ function MM_validateForm() {
             <p>Already have an account? <a title="login" href="index.html#loginform" >Login Here</a></p>
         </form>
       </div>
-      <!-- processing user data to firebase-->
-  <script>
-    // Send message
-    var userForm = document.getElementById('registration-form');
-    var registerSuccess = document.getElementById('register-success');
-    var registerError = document.getElementById('register-error');
-    var sendBtn = document.getElementById('register');
-    var onMessageComplete = function(error) {
-      sendBtn.disabled = false;
-      if (error) {
-        registerError.innerHTML = 'Sorry. Could not register.';
-      } else {
-        document.alert("You have been registered");
-        sendBtn.disabled = false;
-        // clear the form
-         document.getElementById("registration-form").reset();
-      }
-    };
-    function registerUser(formObj) {
-        // Store registered users to firebase
-        var myFirebaseRef = new Firebase("https://houseauction.firebaseio.com/users");
-        myFirebaseRef.push({
-          firstname: formObj.firstname.value,
-          secondname: formObj.secondname.value,
-          email: formObj.email.value,
-          password: formObj.password.value
-        }, onMessageComplete);
-        sendBtn.disabled = true;
-        return false;
-    }
-</script>
   </body>
 </html>
