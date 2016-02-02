@@ -1,9 +1,10 @@
 <%-- 
     Document   : login
-    Created on : Feb 2, 2016, 12:27:17 PM
+    Created on : Jan 27, 2016, 5:36:47 PM
     Author     : kimaiga
 --%>
 
+<%@page import="java.io.PrintWriter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*,java.sql.ResultSet, java.sql.Statement;"%>
 <%
 //java Code
@@ -15,7 +16,6 @@ Connection conn= null;
     String password = "";
     Statement st = null;
     ResultSet rs;
-
     try{
         Class.forName(driver);
         conn = DriverManager.getConnection(url+dbName,user,password);
@@ -23,24 +23,15 @@ Connection conn= null;
     }catch(Exception exp){
         out.println("<h3>Cannot connect to the database,check network settings.</h3>");
     }
-  //java code
-String uname = request.getParameter("username");
+String fname = request.getParameter("firstname");
+String secname = request.getParameter("secondname");
+String email = request.getParameter("email");
 String pass = request.getParameter("password");
-//sql check
-String sql = "SELECT * FROM user WHERE email = '"+uname+"' AND password = '"+pass+"'";
+String sql = "INSERT INTO user VALUES ('"+fname+"','"+secname+"','"+email+"','"+pass+"')";
 st.execute(sql);
-//
-////some form validation using java
-//
-//		if(uname.equals("") && pass.equals(""))
-//		{
-//			response.sendRedirect("success.html");
-//			return;
-//		}
-//		else
-//		{
-//			response.sendRedirect("error.html");
-//			return;
-//		}
+conn.createStatement();
+System.out.println(sql);
+       response.setContentType("text/html;charset=UTF-8");
+        PrintWriter x = response.getWriter();
+        x.println("saved!");
 %>
-
