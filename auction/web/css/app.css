@@ -219,6 +219,17 @@ h6,
     background: url("../img/arrow.png") no-repeat 0px 0px;
 }
 
+#welcome-message{
+    padding-top: 190px;
+    color: whitesmoke;
+    text-align: justify;
+    margin-left: 10px;
+    text-transform: lowercase;
+    
+    
+}
+
+
 /*responsive media queries*/
 @media (min-width: 768px) {
   .container {

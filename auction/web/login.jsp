@@ -32,6 +32,7 @@ st.execute(sql);
 
 if(uname.equals("")||pass.equals("") ){
     response.sendRedirect("error.html");
+//	session.setAttribute("cust_name",uname);
 }else {
 	response.sendRedirect("success.html");
 }
