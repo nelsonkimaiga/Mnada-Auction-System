@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : Feb 4, 2016, 1:43:00 PM
+    Author     : kimaiga
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -82,7 +89,7 @@ function MM_validateForm() {
   </div>
   <!-- login form--> 
   <div id="loginform" class="large-6 columns">
-    <form class="form" action="login.jsp" method="POST" id="" onsubmit="" name="loginForm">
+    <form class="form" action="loginCheck.jsp" method="POST" id="" onsubmit="" name="loginForm">
         <p id="login-success" class="text-success lead"></p>
         <p id="login-error" class="text-danger lead"></p>
       <fieldset>

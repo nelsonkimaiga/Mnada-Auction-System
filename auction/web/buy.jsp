@@ -31,18 +31,15 @@
          </div>
         </div>
       
-      <br>
-      <!--search form-->
-      <div class="medium-6 large-6 columns" id="searchdiv">  
-      <form id="searchform" class="form-search form" autocomplete="off" action="/search/submit/" method="POST">
-          <fieldset>
-              <input type="text" name="search" placeholder="Search">
-          </fieldset>
-      </form>
+      <div class="container large-horizontal columns" id="searchdiv">
+          <form class="form" action="" method="POST" name="searchform" autocomplete="off">
+              <div class="row medium-6 column">
+                  <fieldset>
+                      <input type="text" placeholder="Search">
+                  </fieldset>
+              </div>
+          </form>
       </div>
-      
-      <br>
-      <!--Image placeholders-->
       
   </body>   
 

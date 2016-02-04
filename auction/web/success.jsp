@@ -1,3 +1,10 @@
+<%-- 
+    Document   : success
+    Created on : Feb 4, 2016, 2:08:31 PM
+    Author     : kimaiga
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,10 +33,16 @@
         </div>
        <!--message section-->
        <div>
-           <h1 id="welcome-message">Welcome to Bryclin Kenya! You are logged in as...</h1>
-           
+           <h1 id="welcome-message">
+<!--initiate session-->
+<%
+            String a=session.getAttribute("username").toString();
+            out.println("Welcome to Bryclin Kenya! You are logged in as  "+a);
+%>
+       </h1>
            <!--Proceed-->
-           <button class="large button" onclick="window.location.href='index.html'">Proceed</button>
+           <button class="large button" onclick="window.location.href='buy.jsp'">Proceed</button>
        </div>
     </body>
 </html>
+

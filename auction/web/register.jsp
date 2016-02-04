@@ -1,3 +1,10 @@
+<%-- 
+    Document   : register
+    Created on : Feb 4, 2016, 2:00:23 PM
+    Author     : kimaiga
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -70,3 +77,4 @@ function MM_validateForm() {
       </div>
   </body>
 </html>
+

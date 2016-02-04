@@ -29,12 +29,12 @@ String pass = request.getParameter("password");
 //sql check
 String sql = "SELECT * FROM user WHERE email = '"+uname+"' AND password = '"+pass+"'";
 st.execute(sql);
+rs=st.executeQuery(sql);
 
-if(uname.equals("")||pass.equals("") ){
-    response.sendRedirect("error.html");
-//	session.setAttribute("cust_name",uname);
-}else {
-	response.sendRedirect("success.html");
-}
+if((uname.equals("") && password.equals(""))) { 
+     response.sendRedirect("error.jsp");
+} else  
+    session.setAttribute("username",uname); 
+    response.sendRedirect("success.jsp");
 %>
 
