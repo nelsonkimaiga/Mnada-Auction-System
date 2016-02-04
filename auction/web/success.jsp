@@ -25,8 +25,8 @@
             <nav>
                 <ul class="nav masthead-nav">
                     <li class="active"><a href="logout.jsp">Logout</a></li>
-                    <li><a href="">Buy</a></li>
-                    <li><a href="">Sell</a></li> 
+                    <li><a href="buy.jsp">Buy</a></li>
+                    <li><a href="sell.jsp">Sell</a></li> 
                 </ul>
             </nav>
          </div>
@@ -40,8 +40,8 @@
             out.println("Welcome to Bryclin Kenya! You are logged in as  "+a);
 %>
        </h1>
-           <!--Proceed-->
-           <button class="large button" onclick="window.location.href='buy.jsp'">Proceed</button>
+           <!--Subcription form-->
+<!--           <button class="large button" onclick="window.location.href='buy.jsp'">Proceed</button>-->
        </div>
     </body>
 </html>

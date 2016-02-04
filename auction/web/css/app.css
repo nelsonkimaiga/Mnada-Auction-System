@@ -224,12 +224,21 @@ h6,
     color: whitesmoke;
     text-align: justify;
     margin-left: 10px;
-    text-transform: lowercase;
-    
-    
+    text-transform: capitalize;      
 }
 
+#list-message{
+    padding-top: 190px;
+    color: whitesmoke;
+    text-align: center;
+    /*margin-left: 10px;*/
+    text-transform: lowercase; 
+}
 
+#labels{
+    text-transform: capitalize;
+    color: #fff;
+}
 /*responsive media queries*/
 @media (min-width: 768px) {
   .container {
