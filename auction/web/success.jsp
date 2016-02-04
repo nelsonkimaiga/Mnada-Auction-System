@@ -24,7 +24,7 @@
             <h3 class="masthead-brand"><a href="#home"><img src="img/logo.jpg" id="nav-logo"></a></h3>
             <nav>
                 <ul class="nav masthead-nav">
-                    <li class="active"><a href="#">Logout</a></li>
+                    <li class="active"><a href="logout.jsp">Logout</a></li>
                     <li><a href="">Buy</a></li>
                     <li><a href="">Sell</a></li> 
                 </ul>
