@@ -1,3 +1,10 @@
+<%-- 
+    Document   : buy
+    Created on : Feb 3, 2016, 6:01:41 PM
+    Author     : kimaiga
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,8 +17,7 @@
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   </head>
-    <body>
-        <!--container section and navbar-->
+  <body>
         <div>
          <div class="container-fluid">
             <h3 class="masthead-brand"><a href="#home"><img src="img/logo.jpg" id="nav-logo"></a></h3>
@@ -24,12 +30,19 @@
             </nav>
          </div>
         </div>
-       <!--message section-->
-       <div>
-           <h1 id="welcome-message">Welcome to Bryclin Kenya! You are logged in as...</h1>
-           
-           <!--Proceed-->
-           <button class="large button" onclick="window.location.href='index.html'">Proceed</button>
-       </div>
-    </body>
-</html>
+      
+      <br>
+      <!--search form-->
+      <div class="medium-6 large-6 columns" id="searchdiv">  
+      <form id="searchform" class="form-search form" autocomplete="off" action="/search/submit/" method="POST">
+          <fieldset>
+              <input type="text" name="search" placeholder="Search">
+          </fieldset>
+      </form>
+      </div>
+      
+      <br>
+      <!--Image placeholders-->
+      
+  </body>   
+

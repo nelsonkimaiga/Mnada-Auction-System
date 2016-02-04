@@ -246,3 +246,9 @@ h6,
     width: 1170px;
   }
 }
+
+#searchdiv{
+    padding-top: 50px;
+    align-items: center;
+    margin-left: 200px;
+}
