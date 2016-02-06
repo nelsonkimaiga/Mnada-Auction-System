@@ -11,11 +11,19 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import javax.servlet.annotation.*;
+import java.io.InputStream;
+import java.sql.*;
 
 /**
  *
  * @author kimaiga
  */
+
+@WebServlet("/sell")
+@MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 16MB
+
 public class sell extends HttpServlet {
 
     /**
@@ -71,6 +79,31 @@ public class sell extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+    //java Code
+Connection conn= null;
+    String url = "jdbc:mysql://localhost/";
+    String dbName = "auction";
+    String driver ="com.mysql.jdbc.Driver";
+    String user = "root";
+    String password = "";
+    Statement st = null;
+    ResultSet rs;
+
+    try{
+        Class.forName(driver);
+        conn = DriverManager.getConnection(url+dbName,user,password);
+        st = conn.createStatement();
+    }catch(Exception exp){
+        out.println("<h3>Cannot connect to the database,check network settings.</h3>");
+    }    
+  
+    //ectract user data
+    String title=request.getParameter("title");
+        
+        
     }
 
     /**

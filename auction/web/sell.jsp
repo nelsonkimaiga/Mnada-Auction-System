@@ -1,10 +1,4 @@
-<%-- 
-    Document   : sell
-    Created on : Feb 4, 2016, 3:29:55 PM
-    Author     : kimaiga
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*, java.io.File, java.io.IOException, java.util.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,7 +59,7 @@ document.MM_returnValue = (errors == '');
         
         <p id="list-message">Create a Listing to sell your item</p>
         <section>
-            <form class="form" name="sellform" method="POST" action="" autocomplete="off">
+            <form class="form" name="sellform" method="POST" action="sell" autocomplete="off" enctype="multipart/form-data">
                 <div class="container">
                     <div class="medium-12 large-12 columns">
                         <label id="labels">Title
